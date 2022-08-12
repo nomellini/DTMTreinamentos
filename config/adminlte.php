@@ -267,8 +267,29 @@ return [
 
     'menu' => [
         [
+            'text' => 'Home',
+            'url'  => '/',
+            'icon' => 'fas fa-home'
+        ],
+        [
+            'text' => 'Contato',
+            'url'  => 'contato',
+            'icon' => 'far fa-clipboard'
+        ],
+        [
             'text' => 'Planos',
-            'url'  => 'admin/plans'
+            'url'  => 'admin/plans',
+            'icon' => 'far fa-file'
+        ],
+        [
+            'text' => 'Treinamento',
+            'url'  => '#',
+            'submenu' => [
+                [
+                    'text' => 'Listagem',
+                    'url'  => 'treinamento/lista'
+                ]
+            ]
         ]
     ],
 
