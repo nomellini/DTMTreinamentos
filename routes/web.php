@@ -25,7 +25,7 @@ Route::prefix('/admin')->group(function() {
     Route::get('/plans', [PlanController::class, 'index'])->name('admin.planos');
 });
 
-Route::prefix('/treinamento')->group(function() {
+Route::prefix('/treinamentos')->group(function() {
     Route::get('/lista', [ListaTreinamentoController::class, 'index'])->name('site.treinamento.lista');
 });
 

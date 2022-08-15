@@ -38,7 +38,8 @@
             </table>
         </div>
         <div class="card-footer">
-            {{ $lista->onEachSide(5)->links() }}
+            <a href="{{ route('site.treinamento.lista') }}">lista</a>
+
         </div>
 
         </div>

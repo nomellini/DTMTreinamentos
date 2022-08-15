@@ -11,13 +11,10 @@ class ListaTreinamentoController extends Controller
 {
     function index() {
 
-        Paginator::useBootstrapFive();
+        //$this->authorize('ver-listagem');
 
-        $lista = CadastroTreinamento::paginate(10);
+        $lista = CadastroTreinamento::all();
 
-        return view('site.treinamento.lista',
-            [
-                'lista' => $lista
-            ]);
+        return view('site.treinamento.lista', compact('lista'));
     }
 }
