@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Lista de items !')
+@section('title', 'Lista de trainados !')
 
 @section('content_header')
-    <h1>Listagem de items</h1>
+    <h1>Listagem de treinados</h1>
 @stop
 
 @section('content')
-@livewire('search-users')
+@livewire('search-treinados')
 @stop
 
 @section('css')

@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\Treinamento\CadastroTreinamento;
 use Livewire\WithPagination;
 
-class SearchUsers extends Component
+class SearchTreinados extends Component
 {
 
     use WithPagination;
@@ -37,7 +37,7 @@ class SearchUsers extends Component
                                     orderBy($this->sortField)->
                                     paginate(10);
 
-        return view('livewire.search-users', [
+        return view('livewire.search-treinados', [
             'lista' => $lista,
         ]);
     }

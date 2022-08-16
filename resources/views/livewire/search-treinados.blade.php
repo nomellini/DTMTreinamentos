@@ -8,9 +8,6 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <div class="row">
-
-
-
         <div class="card container-fluid">
             <div class="card-header">
                 Filtro <input wire:model.debounce.250ms="search" type="text" placeholder="Pesquisar..."/>
