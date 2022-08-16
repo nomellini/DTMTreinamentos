@@ -41,11 +41,11 @@
 
     {{-- Livewire Styles --}}
     @if(config('adminlte.livewire'))
-        @if(app()->version() >= 7)
-            @livewireStyles
-        @else
-            <livewire:styles />
-        @endif
+    @if(app()->version() >= 7)
+        @livewireStyles
+    @else
+        <livewire:styles />
+    @endif
     @endif
 
     {{-- Custom Stylesheets (post AdminLTE) --}}
