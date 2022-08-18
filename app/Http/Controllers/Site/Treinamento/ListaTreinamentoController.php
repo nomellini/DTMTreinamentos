@@ -10,11 +10,8 @@ use App\Models\Treinamento\CadastroTreinamento;
 class ListaTreinamentoController extends Controller
 {
     function index() {
-
         $this->authorize('lista-treinados');
-
         $lista = CadastroTreinamento::all();
-
         return view('site.treinamento.lista', compact('lista'));
     }
 }
