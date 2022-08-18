@@ -11,6 +11,7 @@
         <div class="card container-fluid">
             <div class="card-header">
                 Filtro <input wire:model.debounce.250ms="search" type="text" placeholder="Pesquisar..."/>
+                @error('search') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="card-body" wire:loading.class.delay='opaco'>
@@ -24,9 +25,12 @@
                         </tr>
                     </thead>
                     <tbody>
+
+
                         @forelse($lista as $item)
+
                         <tr >
-                            <td>{{$item->nome}} </td>
+                            <td>{{$item->nome}}</td>
                             <td>{{$item->email}}</td>
                             <td>{{$item->cargo}}</td>
                             {{-- <td> <a href="{{ route('site.treinamento.lista', ['id' => $item->id]) }}" class="btn btn-warning">ok</a>             </td> --}}

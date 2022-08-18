@@ -14,7 +14,12 @@ class SearchTreinados extends Component
 
     public $search = '';
     public $sortField = 'nome';
-    public $sortDirection = 'asc';
+
+    public $index;
+
+    protected $rules = [
+        'search' => 'required|min:6'
+    ];
 
     public function mount() {
     }
@@ -31,11 +36,13 @@ class SearchTreinados extends Component
 
     public function render()
     {
-        sleep(1);
-        $lista = CadastroTreinamento::where('nome','like', '%' . $this->search.'%')->
-                                    OrWhere('email','like', '%' . $this->search.'%')->
+
+
+
+        $lista = CadastroTreinamento::
+                                    where('nome','like', $this->search.'%')->
                                     orderBy($this->sortField)->
-                                    paginate(10);
+                                    paginate(15);
 
         return view('livewire.search-treinados', [
             'lista' => $lista,
