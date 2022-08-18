@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PlanController;
 use App\Http\Controllers\Site\ContatoController;
 use App\Http\Controllers\Site\Treinamento\ListaTreinamentoController;
+use App\Http\Controllers\Site\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ Route::prefix('/treinamento')->group(function() {
     Route::get('/lista', [ListaTreinamentoController::class, 'index'])->name('site.treinamento.lista');
 });
 
+Route::get('/login', [LoginController::class, 'login'])->name('site.login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('site.logout');
+Route::post('/login', [LoginController::class, 'auth'])->name('site.auth');
 
 Route::get('/home', function () {
     return view('welcome');

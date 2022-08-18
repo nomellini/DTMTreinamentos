@@ -11,7 +11,7 @@ class ListaTreinamentoController extends Controller
 {
     function index() {
 
-        //$this->authorize('ver-listagem');
+        $this->authorize('lista-treinados');
 
         $lista = CadastroTreinamento::all();
 

@@ -272,6 +272,11 @@ return [
             'icon' => 'fas fa-home'
         ],
         [
+            'text' => 'Login',
+            'url'  => '/login',
+            'icon' => 'fas fa-login'
+        ],
+        [
             'text' => 'Contato',
             'url'  => 'contato',
             'icon' => 'far fa-clipboard'
