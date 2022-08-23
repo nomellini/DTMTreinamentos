@@ -10,6 +10,6 @@ class Chamado extends Model
 {
     use HasFactory;
     protected $table = 'sad.chamado';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_chamado';
     public $timestamps = false;
 }

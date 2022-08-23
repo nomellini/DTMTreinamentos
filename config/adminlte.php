@@ -63,8 +63,9 @@ return [
     |
     */
 
-    'logo' => '<b>DTM</b>Treinamentos',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>D</b>atamace',
+    // 'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'img/D_450.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -274,25 +275,32 @@ return [
         [
             'text' => 'Login',
             'url'  => '/login',
-            'icon' => 'fas fa-login'
+            'icon' => 'fas fa-sign-in-alt'
+
         ],
-        [
-            'text' => 'Contato',
-            'url'  => 'contato',
-            'icon' => 'far fa-clipboard'
-        ],
-        [
-            'text' => 'Planos',
-            'url'  => 'admin/plans',
-            'icon' => 'far fa-file'
-        ],
+        // [
+        //     'text' => 'Contato',
+        //     'url'  => 'contato',
+        //     'icon' => 'far fa-clipboard'
+        // ],
+        // [
+        //     'text' => 'Planos',
+        //     'url'  => 'admin/plans',
+        //     'icon' => 'far fa-file'
+        // ],
         [
             'text' => 'Treinamento',
             'url'  => '#',
+            'icon' => 'fas fa-graduation-cap',
             'submenu' => [
                 [
-                    'text' => 'Listagem',
-                    'url'  => 'treinamento/lista'
+                    'text' => 'Treinados',
+                    'url'  => 'treinamento/lista',
+                    'icon' => 'fas fa-list'
+                ], [
+                    'text' => 'Calendário',
+                    'url'  => 'treinamento/calendario',
+                    'icon' => 'far fa-calendar-alt'
                 ]
             ]
         ]

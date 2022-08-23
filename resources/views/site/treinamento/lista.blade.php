@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-@livewire('search-treinados')
+    @livewire('search-treinados')
 @stop
 
 @section('css')

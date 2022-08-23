@@ -78,7 +78,7 @@
 
 <body class="@yield('classes_body')" @yield('body_data')>
 
-    {{-- Body Content --}}
+        {{-- Body Content --}}
     @yield('body')
 
     {{-- Base Scripts --}}
