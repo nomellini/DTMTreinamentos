@@ -23,7 +23,10 @@
         },
       }
   </script>
-  <title>Datamace -Treinamentos</title>
+      <title>
+        @yield('title')
+    </title>
+
 </head>
 
 <body class="mb-48">
