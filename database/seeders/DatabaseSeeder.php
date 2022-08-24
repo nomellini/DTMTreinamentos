@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Administrador',
             'email' => 'admin@datamace.com.br',
+            'username' => 'nomellini',
             'password' => Hash::make('123')
         ]);
     }
