@@ -23,6 +23,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/teste', function () {
+    dd(  auth()->user()->is_admin() );
+})->middleware('auth');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -39,7 +44,7 @@ Route::prefix('/admin')->group(function() {
     Route::get('/plans', [PlanController::class, 'index'])->name('admin.planos');
 });
 
-Route::prefix('/treinamento')->group(function() {
+Route::prefix('/treinamento')->middleware('auth')->group(function() {
     Route::get('/calendario/{mes?}/{ano?}', [CalendarioController::class, 'index'])->name('site.treinamento.calendario');
     Route::get('/turmas-disponiveis/{id}/{mes?}/{ano?}', [TurmasController::class, 'show'])->name('treinamento.turmas-disponiveis');
     Route::get('/lista', [ListaTreinamentoController::class, 'index'])->name('site.treinamento.lista');

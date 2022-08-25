@@ -3,14 +3,57 @@
 
 @section('content')
 
-<div class="bg-laravel text-white m-5 p-5 opacity-90 text-lg shadow-lg rounded-lg">
-    {{$turma->Nome}}
-    <p class="text-sm text-slate-300 " >{{$turma->Descricao}}</p>
+<div class="lg:container mx-auto px-5 scroll-smooth">
+
+    {{-- Descrição do treinamento --}}
+    <div class="p-5 text-black">
+        <h1 class="text-3xl" >{{$turma->Nome}}</h1>
+        <p class="mt-2 text-slate-900 text-sm" >{{$turma->Descricao}}</p>
+    </div>
+
+    {{-- Conteúdo e carga horária --}}
+    <div class="grid grid-cols-1 md:grid-cols-4">
+
+        {{-- Conteúdo --}}
+        <div class="col-span-3 m-1">
+
+            <div class="flex flex-col sm:flex-row items-stretch justify-between " >
+                <div class="flex-auto p-5 bg-slate-50
+                    border-b-2
+                    hover:border-b-2 hover:border-black">Visão Geral</div>
+                <div class="flex-auto p-5 bg-slate-50
+                    border-b-2
+                    hover:border-b-2 hover:border-black">Informações Complementares</div>
+                <div class="flex-auto p-5 bg-slate-50
+                    border-b-2
+                    hover:border-b-2 hover:border-black">Inscrição</div>
+            </div>
+
+            <div class="bg-slate-100 ">
+                <p class="p-5 tracking-tight">
+                    {!! nl2br($turma->Conteudo) !!}
+                </p>
+            </div>
+
+            <div class="bg-slate-100 ">
+                <p class="p-5 tracking-tight">
+                    {!! nl2br($turma->Sinopse) !!}
+                </p>
+            </div>
+
+        </div>
+
+        {{-- Carga horária --}}
+        <div class="m-1 p-5 rounded-xl col-span-1">
+            <ol>
+                <li>Duração: {{ $turma->Modulos }}</li>
+                <li>{{ $turma->CargaHoraria }}</li>
+                <li>{{ $turma->Preco }}</li>
+                <li><span>Local do treinamento: </span><a href="https://goo.gl/maps/Qv11dMsMkZQ2" target="_blank">Veja o mapa</a></li>
+            </ol>
+        </div>
+    </div>
+
 </div>
-
-<p class="m-5 p-5 font-sans font-normal">
-    {!! nl2br($turma->Conteudo) !!}
-</p>
-
 
 @stop

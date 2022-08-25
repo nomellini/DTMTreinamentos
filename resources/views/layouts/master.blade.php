@@ -40,9 +40,6 @@
         </span>
       </li>
       <li>
-        <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Listings</a>
-      </li>
-      <li>
         <form class="inline" method="POST" action="/logout">
           @csrf
           <button type="submit">
