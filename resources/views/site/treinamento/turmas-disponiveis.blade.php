@@ -1,9 +1,11 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 @section('title', 'Turmas disponíveis')
-
 @section('content')
+--}}
 
-<div class="lg:container mx-auto px-5 scroll-smooth">
+<x-app-layout>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
     {{-- Descrição do treinamento --}}
     <div class="p-5 text-black">
@@ -54,6 +56,6 @@
         </div>
     </div>
 
+    </div>
 </div>
-
-@stop
+</x-app-layout>

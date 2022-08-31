@@ -1,8 +1,6 @@
 <?php
 namespace App\Http\Controllers\Site\Treinamento;
 
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
@@ -14,6 +12,7 @@ class TurmasController extends Controller {
                 WHERE idTreinamento = ?";
 
         $turma = DB::select($sql, [$TreinamentoId])[0];
+
 
         return view('site.treinamento.turmas-disponiveis', compact('turma'));
 

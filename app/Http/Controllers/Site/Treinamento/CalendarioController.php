@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site\Treinamento;
 
+use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
