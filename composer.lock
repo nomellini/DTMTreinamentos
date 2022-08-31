@@ -2006,7 +2006,8 @@
             },
             "autoload": {
                 "classmap": [
-                    "src/"
+                    "src/",
+                    "app/libraries"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",

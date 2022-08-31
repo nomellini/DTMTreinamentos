@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\PlanController;
 use App\Http\Controllers\Site\LoginController;
 use App\Http\Controllers\Site\ContatoController;
 use App\Http\Controllers\Site\Treinamento\TurmasController;
@@ -23,26 +22,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/teste', function () {
-    dd(  auth()->user()->is_admin() );
-})->middleware('auth');
-
+Route::get('/home', function () {
+    return redirect('/');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/', function() {
-    return view('welcome');
-})->name('home');
+})->middleware('auth')->name('dashboard');
 
 
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
-
-Route::prefix('/admin')->group(function() {
-    Route::get('/plans', [PlanController::class, 'index'])->name('admin.planos');
-});
 
 Route::prefix('/treinamento')->middleware('auth')->group(function() {
     Route::get('/calendario/{mes?}/{ano?}', [CalendarioController::class, 'index'])->name('site.treinamento.calendario');
@@ -53,7 +43,5 @@ Route::prefix('/treinamento')->middleware('auth')->group(function() {
 Route::get('/login', [LoginController::class, 'login'])->name('site.login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('site.logout');
 Route::post('/login', [LoginController::class, 'auth'])->name('site.auth');
-
-
 
 require __DIR__.'/auth.php';

@@ -14,6 +14,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, UserACLTrait;
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -24,6 +25,7 @@ class User extends Authenticatable
         'email',
         'username',
         'password',
+        'id_usuario'
     ];
 
     /**
